@@ -2,6 +2,10 @@ terraform {
   required_version = ">=1.0"
 
   required_providers {
+    github = {
+      source  = "integrations/github"
+      version = "~> 6.0"
+    }
     hcp = {
       source  = "hashicorp/hcp"
       version = "~> 0.102.0"
@@ -21,10 +25,12 @@ terraform {
   }
 }
 
+provider "github" {}
+
 provider "hcp" {}
+
+provider "azuread" {}
 
 provider "azurerm" {
   features {}
 }
-
-provider "azuread" {}

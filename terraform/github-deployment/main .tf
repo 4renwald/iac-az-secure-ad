@@ -70,3 +70,10 @@ module "hcp_secrets_vault_sp_client_secret" {
   secret_name  =  "client_secret"
   secret_value =  module.hcp_deployment.hcp_sp_client_secret
 }
+
+module "github_actions_hcp_secret" {
+  source          = "../modules/github-actions-secret"
+  repository      = var.github_repo_name
+  secret_name     = "hcp_sp_client_id"
+  plaintext_value = module.hcp_deployment.hcp_sp_client_secret
+}

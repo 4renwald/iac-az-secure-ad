@@ -32,7 +32,6 @@ variable "contributor_role_name" {
   default     = "Contributor"
 }
 
-
 # resource-group module variables
 variable "github_tfstate_rg_name" {
   type        = string
@@ -67,7 +66,7 @@ variable "github_tfstate_sa_container_name" {
 
 # hcp-vault-secrets module variables
 variable "hcp_project_name" {
-  type = string
+  type        = string
   description = "The name of the project in HCP"
 }
 
@@ -77,6 +76,11 @@ variable "hcp_vault_secrets_app_name" {
 }
 
 variable "hcp_project_sp_name" {
-  type = string
+  type        = string
   description = "The name of the HCP Service Principal linked to the project"
+}
+
+variable "github_repo_name" {
+  type        = string
+  description = "The name of the github repository"
 }
