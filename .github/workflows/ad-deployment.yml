@@ -32,6 +32,10 @@ env:
   ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
   ARM_USE_AZUREAD: true
 
+defaults:
+  run:
+    environment: dev
+
 jobs:
   terraform-plan:
     name: Terraform Plan
