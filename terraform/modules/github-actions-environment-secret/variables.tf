@@ -9,6 +9,11 @@ variable "secret_name" {
 }
 
 variable "plaintext_value" {
-    type = string
+    type        = string
     description = "Encrypted value of the secret using the GitHub public key in Base64 format."
+}
+
+variable "environment" {
+    type        = string
+    description = "Name of the environment"
 }

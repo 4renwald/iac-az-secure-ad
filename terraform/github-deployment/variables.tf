@@ -11,7 +11,6 @@ variable "tags" {
 
 variable "environment" {
   type    = string
-  default = "dev"
 }
 
 variable "account_tier" {
@@ -33,31 +32,31 @@ variable "contributor_role_name" {
 }
 
 # resource-group module variables
-variable "github_tfstate_rg_name" {
+variable "rg_tfstate_name" {
   type        = string
   description = "The name of the azure resource group used for the github integration"
 }
 
-variable "github_uami_rg_name" {
+variable "rg_uami_name" {
   type        = string
   description = "The name of the azure resource group containing the user assigned managed identity"
 }
 
 
 # user-assigned-managed-identity module variables
-variable "github_uami_name" {
+variable "uami_name" {
   description = "The name of the user-assigned managed identity that's used for GitHub Actions"
   type        = string
 }
 
 
 # storage-account-tfstate module variables
-variable "github_tfstate_sa_name" {
+variable "sa_tfstate_name" {
   type        = string
   description = "The name of the storage account"
 }
 
-variable "github_tfstate_sa_container_name" {
+variable "container_tfstate_name" {
   type        = string
   description = "The name of the storage container"
   default     = "tfstate"
@@ -80,7 +79,12 @@ variable "hcp_project_sp_name" {
   description = "The name of the HCP Service Principal linked to the project"
 }
 
-variable "github_repo_name" {
+variable "github_repository" {
   type        = string
   description = "The name of the github repository"
+}
+
+variable "github_organization_target" {
+  type        = string
+  description = "The name of the github organization"
 }
