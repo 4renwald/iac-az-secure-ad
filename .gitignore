@@ -13,6 +13,9 @@ crash.*.log
 *.tfvars
 *.tfvars.json
 
+# Except input.tfvars
+!input.tfvars
+
 # Ignore override files, used for local modifications
 override.tf
 override.tf.json
