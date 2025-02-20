@@ -9,6 +9,11 @@ variable "tags" {
   description = "A mapping of tags to assign to the resource"
 }
 
+variable "environment" {
+  type        = string
+  description = "Environment used (dev,preprod.prod)"
+}
+
 variable "rg_name" {
   type        = string
   description = "Name of the resource group to deploy to"
