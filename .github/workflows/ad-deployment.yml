@@ -63,7 +63,7 @@ jobs:
         id: plan
         if: github.event.inputs.terraform_task == 'plan' || github.event.inputs.terraform_task == 'apply'
         run: |
-          terraform plan -out main.tfplan -detailed-exitcode || {
+          terraform plan -var-file=dev/domain.local/${{ github.event.inputs.server}}/input.tfvars -out main.tfplan -detailed-exitcode || {
             exitcode=$?
             if [ $exitcode -eq 1 ]; then
               echo "Terraform plan failed"
