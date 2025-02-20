@@ -92,7 +92,7 @@ module "github_actions_secret_hcp_sp_client_id" {
 module "github_actions_secret_hcp_sp_client_secret" {
   source          = "../modules/github-actions-environment-secret"
   repository      = var.github_repository
-  environment      = var.environment
+  environment     = var.environment
   secret_name     = "hcp_sp_client_secret"
   plaintext_value = module.hcp_deployment.hcp_sp_client_secret
 }
@@ -100,7 +100,7 @@ module "github_actions_secret_hcp_sp_client_secret" {
 module "github_actions_secret_az_client_id" {
   source          = "../modules/github-actions-environment-secret"
   repository      = var.github_repository
-  environment      = var.environment
+  environment     = var.environment
   secret_name     = "AZURE_CLIENT_ID"
   plaintext_value = module.uami.user_assigned_identity_client_id
 }
@@ -108,15 +108,15 @@ module "github_actions_secret_az_client_id" {
 module "github_actions_secret_az_subscription_id" {
   source          = "../modules/github-actions-environment-secret"
   repository      = var.github_repository
-  environment      = var.environment
+  environment     = var.environment
   secret_name     = "AZURE_SUBSCRIPTION_ID"
-  plaintext_value = data.azurerm_subscription.sub.id
+  plaintext_value = data.azurerm_subscription.sub.subscription_id
 }
 
 module "github_actions_secret_az_tenant_id" {
   source          = "../modules/github-actions-environment-secret"
   repository      = var.github_repository
-  environment      = var.environment
+  environment     = var.environment
   secret_name     = "AZURE_TENANT_ID"
   plaintext_value = data.azurerm_client_config.current.tenant_id
 }
