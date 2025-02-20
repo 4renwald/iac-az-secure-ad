@@ -10,7 +10,8 @@ variable "tags" {
 }
 
 variable "environment" {
-  type    = string
+  type        = string
+  description = "Environment used (dev,preprod.prod)"
 }
 
 variable "rg_name" {
