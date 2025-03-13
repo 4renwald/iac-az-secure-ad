@@ -72,7 +72,7 @@ module "hcp_deployment" {
   source                 = "../modules/hcp-deployment"
   name                   = var.hcp_project_name
   app_name               = "${var.hcp_vault_secrets_app_name}-${var.environment}"
-  service_principal_name = "${var.hcp_project_sp_name}${var.environment}"
+  service_principal_name = "${var.hcp_project_sp_name}-${var.environment}"
 }
 
 module "github_actions_environment_dev" {
